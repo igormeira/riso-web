@@ -1,18 +1,13 @@
 (function() {
   'use strict';
 
-  angular.module('risoApp')
-    .directive('risoNavbar', risoNavbar);
+  var app = angular.module('risoApp', []);
 
-
-    /*jshint latedef: nofunc */
+  app.directive('risoNavbar', risoNavbar);
     function risoNavbar() {
       return {
         templateUrl: 'views/riso-navbar.html',
-        restrict: 'E',
-        scope: {
-          expanded: '='
-        }
+        restrict: 'E'
       };
     }
 })();
