@@ -9,36 +9,32 @@
    *
    * Main module of the application.
    */
-  var app = angular.module('risoApp',[
-      'ui.router',
-      'templates'
-    ]);
+angular.module('risoApp', ['ngRoute', 'directivesNavFoot'])
 
-  app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider) {
-      $stateProvider
-      .state('desambiguation', {
-        url: "/",
-        templateUrl: "views/desambiguation.html",
-        controller: "MainCtrl",
-        controllerAs: "ctrl",
-        reloadOnSearch: false
-      })
-      .state('enrich', {
-        url: "/enrich",
-        templateUrl: "views/enrich.html",
-        controller: "MainCtrl",
-        controllerAs: "main"
-      })
-      .state('help', {
-        url: "/help",
-        templateUrl: "views/help.html"
-      })
-      .state('about', {
-        url: "/about",
-        templateUrl: "views/about.html"
-      });
-      $urlRouterProvider.otherwise('/');
-    }])
+  .config(function($routeProvider, $locationProvider) {
 
-})();
+    $locationProvider.html5Mode(true);
+
+    $routeProvider.when('/',  {
+      temaplateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    });
+
+    $routeProvider.when('/enrich',  {
+      temaplateUrl: 'views/enrich.html',
+      controller: 'MainCtrl'
+    });
+
+    $routeProvider.when('/about',  {
+      temaplateUrl: 'views/about.html'
+    });
+
+    $routeProvider.when('/help',  {
+      temaplateUrl: 'views/help.html'
+    });
+
+    $routeProvider.otherwise({
+      redirectTo: '/'
+    });
+
+  })});
