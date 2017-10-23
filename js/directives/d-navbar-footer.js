@@ -3,14 +3,14 @@
 var app;
 app = angular.module('directivesNavFoot', []);
 
-  app.directive('navbar', function() {
+  app.directive('ngNavbar', function() {
     var ddo = {};
     ddo.restrict = 'AE';
     ddo.templateUrl = 'views/navbar.html';
     return ddo;
   });
 
-  app.directive('footer', function() {
+  app.directive('ngFooter', function() {
     var ddo = {};
     ddo.restrict = 'AE';
     ddo.templateUrl = 'views/footer.html';
