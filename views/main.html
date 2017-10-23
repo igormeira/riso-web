@@ -1,5 +1,35 @@
 <div>
+  <div align="center">
+    <img src="https://image.freepik.com/icones-gratis/praca-emoticon-sorridente-rosto-com-os-olhos-fechados_318-58502.png" height="150" width="150">
+  </div>
+  <br>
 
-    <p>Main</p>
+  <div align="center">
+    <input type="text" ng-readonly="riso.showClearBt" ng-model="riso.search" size="35">
+  </div>
+  <br>
 
+  <div>
+    <div align="center">
+      <button ng-show="riso.showDesBt" class="disambiguateBt" ng-click="riso.disambiguateBt()">Disambiguate</button>
+      <button ng-show="riso.showClearBt" class="clearBt" ng-click="riso.clearBt()">Clear</button>
+      <button class="enrichBt" ng-click="riso.enrich()">Enrich</button>
+      <p align="center">
+        <button class="searchBt" ng-click="riso.searchResult()">Search</button>
+      </p>
+    </div>
+
+    <div ng-show="">
+      <div align="center">
+        <br>
+        <h3>Desambiguation</h3>
+      </div>
+
+      <span ng-repeat="">
+        <label class="checkbox">
+          <input type="checkbox" value="{{ctx}}" ng-click="riso.addCheckbox()" name="group" id="{{ctx}}" />{{ctx}}
+        </label>
+      </span>
+    </div>
+  </div>
 </div>
