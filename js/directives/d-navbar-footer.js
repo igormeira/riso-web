@@ -10,7 +10,7 @@ app = angular.module('directivesNavFoot', []);
     return ddo;
   });
 
-  app.directive('footer', function() {
+  app.directive('rodape', function() {
     var ddo = {};
     ddo.restrict = 'AE';
     ddo.templateUrl = 'views/footer.html';
