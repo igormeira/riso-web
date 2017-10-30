@@ -34,7 +34,7 @@
     <script src="js/lib/angular-resource.min.js"></script>
     <script src="js/lib/angular-route.min.js"></script>
 
-    <!--Routes-->
+    <!--Main-->
     <script src="js/app.js"></script>
 
     <!--Controllers-->
@@ -52,18 +52,18 @@
 
     <navbar></navbar>
 
-    <div class="container" align="center">
+    <div ng-controller="MainCtrl" class="container" align="center">
         <!--Logo-->
         <div>
             <img src="images/riso-logo.svg" width="500px" height="225px">
         </div>
         <!--Search field-->
         <div>
-            <input type="text" size="70px">
+            <input type="text" ng-model="search" size="70px">
         </div>
         <!--Buttons-->
         <div>
-            <button>Disambiguate</button>
+            <button ng-show="show">Disambiguate</button>
         </div>
     </div>
 
