@@ -3,8 +3,11 @@
 <!--[if IE 7]>         <html lang="en" ng-app="risoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="risoApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
+
 <html lang="en" ng-app="risoApp" class="no-js"> <!--<![endif]-->
+
 <head ng-app="risoApp">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -15,7 +18,7 @@
 
     <!--Style-->
     <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="images/riso-logo.svg">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
 
@@ -44,11 +47,25 @@
     <!--Services-->
 
 </head>
+
 <body>
 
     <navbar></navbar>
 
-    <div class="container ng-view"></div>
+    <div class="container" align="center">
+        <!--Logo-->
+        <div>
+            <img src="images/riso-logo.svg" width="500px" height="225px">
+        </div>
+        <!--Search field-->
+        <div>
+            <input type="text" size="70px">
+        </div>
+        <!--Buttons-->
+        <div>
+            <button>Disambiguate</button>
+        </div>
+    </div>
 
     <rodape></rodape>
 
@@ -61,4 +78,5 @@
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>
 </body>
+
 </html>
