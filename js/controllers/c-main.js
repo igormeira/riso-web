@@ -3,13 +3,13 @@
 var app;
 app = angular.module('controllerMain', []);
 
-    app.controller('MainCtrl', function($scope) {
+    app.controller('MainCtrl', function() {
 
-        $scope.show = true;
-        $scope.search = "";
-        
-        $scope.desambiguate = function () {
-            console.log($scope.search);
-        }
+        var main = this;
+        main.show = true;
+
+        main.desambiguate = function () {
+            console.log(main.search);
+        };
 
     });

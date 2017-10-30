@@ -18,7 +18,7 @@
 
     <!--Style-->
     <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="icon" href="images/riso-logo.svg">
+    <link rel="shortcut icon" href="images/riso-logo.svg">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
 
@@ -59,11 +59,11 @@
         </div>
         <!--Search field-->
         <div>
-            <input type="text" ng-model="search" size="70px">
+            <input type="text" ng-model="main.search" size="70px">
         </div>
         <!--Buttons-->
         <div>
-            <button ng-show="show">Disambiguate</button>
+            <button ng-show="main.show" ng-click="main.desambiguate()">Disambiguate</button>
         </div>
     </div>
 

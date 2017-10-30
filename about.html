@@ -1,25 +1,95 @@
-<div>
-    <!--About RISO-->
-    <div>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="risoApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="risoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="risoApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
 
+<html lang="en" ng-app="risoApp" class="no-js"> <!--<![endif]-->
+
+<head ng-app="risoApp">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>RISO</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Style-->
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="images/riso-logo.svg">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <!--Bootstrap-->
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--AngularJS-->
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-resource.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+
+    <!--Main-->
+    <script src="js/app.js"></script>
+
+    <!--Controllers-->
+
+    <!--Directives-->
+    <script src="js/directives/d-navbar-footer.js"></script>
+
+    <!--Services-->
+
+</head>
+
+<body>
+
+    <navbar></navbar>
+
+    <div class="container" align="center">
+        <!--about-->
+        <div>
+            <h1>RISO - Indexing And Retrieval Of Semantic Information Of Text Objects</h1>
+            <p class="lead">This project aims to create an indexing and semantic retrieval environment.
+            Documents providing a more accurate recovery, improving the
+            accuracy of results by reducing the ambiguity of the meaning of the terms. RISO is separated into three parts:
+            </p>
+            <p>
+              <ul style="list-style-type:circle">
+                <li>RISO-DV (Domain Vocabularies)</li>
+                <li>RISO-SI (Semantic Indexing)</li>
+                <li>RISO-SR (Semantic Retrieval)</li>
+              </ul>
+            </p>
+        </div>
+
+        <!--team-->
+        <div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img />
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!--Team RISO-->
-    <div class="section section-inverse">
-      <div class="container">
-        <h3 class="section-title section-title-inverse text-center">EQUIPE</h3>
-        <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <img src="images/salomao.png" alt="" class="img-circle team-img">
-            <p class="team-name">Salomão Medeiros</p>
-            <p class="team-office">Coordenador geral</p>
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <img src="images/nazareno.png" alt="" class="img-circle team-img">
-            <p class="team-name">Nazareno Andrade</p>
-            <p class="team-office">Coordenador técnico</p>
-          </div>
-      </div>
-    </div>
+    <rodape></rodape>
 
-</div>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--Components-->
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+</body>
+
+</html>
