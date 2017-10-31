@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="risoApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="risoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="risoApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 
-<html lang="en" ng-app="risoApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="risoApp">
 
-<head ng-app="risoApp">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,30 +44,31 @@
 
 </head>
 
-<body>
+<body ng-controller="MainCtrl as main">
 
     <navbar></navbar>
 
-    <div ng-controller="MainCtrl" class="container" align="center">
+    <div class="container" align="center">
         <!--Logo-->
-        <div>
-            <img src="images/riso-logo.svg" width="500px" height="225px">
+        <div class="logo">
+            <img src="images/riso-logo.svg">
         </div>
         <!--Search field-->
-        <div>
+        <div class="search">
             <input type="text" ng-model="main.search" size="70px">
+            <input type="image" src="images/search-icon.png" ng-click="">
         </div>
         <!--Buttons-->
         <div>
-            <button ng-show="main.show" ng-click="main.desambiguate()">Disambiguate</button>
+            <button ng-show="main.showDesBt" ng-click="main.desambiguate()">Disambiguate</button>
+        </div>
+        <!--Context Content-->
+        <div ng-show="main.showCtx">
+            <hr>
         </div>
     </div>
 
     <rodape></rodape>
-
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <!--Components-->
     <script src="components/version/version.js"></script>

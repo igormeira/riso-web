@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 var app;
-app = angular.module('risoApp', ['directivesNavFoot', 'controllerMain']);
+app = angular.module('risoApp', []);

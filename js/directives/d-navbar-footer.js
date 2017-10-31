@@ -1,7 +1,7 @@
 'use strict';
 
 var app;
-app = angular.module('directivesNavFoot', []);
+app = angular.module('risoApp');
 
   app.directive('navbar', function() {
     var ddo = {};
