@@ -56,15 +56,21 @@
         <!--Search field-->
         <div class="search">
             <input type="text" ng-model="main.search" size="70px">
-            <input type="image" src="images/search-icon.png" ng-click="">
+            <a href="enrich.html" ng-click="main.enrich()"><input type="image" src="images/search-icon.png"></a>
         </div>
         <!--Buttons-->
         <div>
-            <button ng-show="main.showDesBt" ng-click="main.desambiguate()">Disambiguate</button>
+            <button ng-show="main.showDesBt" ng-click="main.disambiguate()">Disambiguate</button>
         </div>
         <!--Context Content-->
         <div ng-show="main.showCtx">
             <hr>
+            <span ng-repeat="ctx in main.context">
+                <label class="checkbox">
+                    <input type="checkbox" value="{{ctx}}" ng-click="main.selected(ctx)" id="{{ ctx.conceitoId }}"/>{{ ctx.contexto }}
+                </label>
+            </span>
+            <button ng-click="main.cancel()">Cancel</button>
         </div>
     </div>
 
