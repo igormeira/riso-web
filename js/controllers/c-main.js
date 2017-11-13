@@ -36,7 +36,7 @@ app = angular.module('risoApp');
             main.context = [];
             main.select = [];
         };
-        
+
         main.selected = function (ctx) {
             if (contains(main.select, ctx)) {
                 var index = main.select.indexOf(ctx);
@@ -50,7 +50,7 @@ app = angular.module('risoApp');
         };
 
         main.enrich = function () {
-            saveRel('relations', main.select);
+            saveRel('contexts', main.select);
             console.log(main.select);
         };
 
