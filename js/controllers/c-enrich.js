@@ -10,23 +10,28 @@ app.controller('EnrichCtrl', function($http, $window) {
     enrich.ctx = [];
     enrich.rel = {};
 
-    var ctx = loadRel('contexts');
-    enrich.ctx = ctx;
+    enrich.ctx = loadRel('contexts');
 
     for (var i = 0; i < enrich.ctx.length; i++) {
-      $http.get('http://0.0.0.0:5003/api/'+enrich.ctx[0]+'/rel')
-          .success(function(relation) {
-              var rel = relation;
-              if (enrich.rel[rel] != undefined) {
-                  //Adicionar em uma Key existente
-              } else {
-                  //Criar Key e adicionar valor
-              };
-          })
-          .error(function(error) {
-              console.log(error);
-          });
-    };
+        var id = enrich.ctx[i].conceitoId;
+
+        //Get all relations
+        $http({
+            method: 'GET',
+            url: 'http://0.0.0.0:5003/api/'+id+'/rel'
+        }).then(function (success){
+
+            for (var j = 0; j < success.data.length; j++) {
+                var relation = success.data[j].relacao;
+                var secondaryId = success.data[j].idSecundario;
+
+                addRelation(relation, secondaryId);
+            }
+
+        },function (error){
+            console.log(error);
+        });
+    }
 
     /////////////////////////
     // Auxiliary functions //
@@ -34,4 +39,25 @@ app.controller('EnrichCtrl', function($http, $window) {
     function loadRel(key) {
         return JSON.parse(window.localStorage.getItem(key)) || [];
     }
+
+    function addRelation(relation, secondaryId) {
+        $http({
+            method: 'GET',
+            url: 'http://0.0.0.0:5003/api/'+secondaryId+'/info'
+        }).then(function (success){
+            var term = success.data[0].termo;
+
+            if (enrich.rel[relation] === undefined) {
+                //Create Key and add value
+                enrich.rel[relation] = [term];
+            } else {
+                //Add value into a Key
+                enrich.rel[relation].push(term);
+            }
+
+        },function (error){
+            console.log(error);
+        });
+    }
+
 });

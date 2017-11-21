@@ -18,13 +18,14 @@ app = angular.module('risoApp');
 
         main.disambiguate = function () {
 
-            $http.get('http://0.0.0.0:5003/api/'+main.search+'/contextos')
-                .success(function(context) {
-                    main.context = context;
-                })
-                .error(function(error) {
-                    console.log(error);
-                });
+            $http({
+                method: 'GET',
+                url: 'http://0.0.0.0:5003/api/'+main.search+'/contextos'
+            }).then(function (success){
+                main.context = success.data;
+            },function (error){
+                console.log(error);
+            });
 
             main.showCtx = true;
             main.showDesBt = false;
@@ -45,13 +46,11 @@ app = angular.module('risoApp');
             }
             else {
                 main.select.push(ctx);
-                console.log(main.select);
             }
         };
 
         main.enrich = function () {
             saveRel('contexts', main.select);
-            console.log(main.select);
         };
 
 
